@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 // Set GITHUB_PAGES=true (done automatically by the deploy workflow) to build
-// for the GitHub Pages project site at /my-portfolio/.
+// for the GitHub Pages project site at /my-portfolio1/.
 const isGithubPages = process.env.GITHUB_PAGES === "true";
-const repoName = "my-portfolio";
+const repoName = "my-portfolio1";
 const basePath = isGithubPages ? `/${repoName}` : "";
 
 const nextConfig: NextConfig = {
