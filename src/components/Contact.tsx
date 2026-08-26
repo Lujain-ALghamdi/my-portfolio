@@ -23,16 +23,15 @@ export default function Contact() {
 
         <div className="space-y-4 font-mono text-sm">
           <ContactLink
-    label="Email"
-    href="mailto:lujain.a.a.alghamdi@gmail.com"
-    value="lujain.a.a.alghamdi@gmail.com"
-  />
-
-  <ContactLink
-    label="Phone"
-    href="tel:+966556330979"
-    value="0556330979"
-  />
+            label="Email"
+            href="mailto:lujain.a.a.alghamdi@gmail.com"
+            value="lujain.a.a.alghamdi@gmail.com"
+            />
+          <ContactLink
+            label="Phone"
+            href="tel:+966556330979"
+            value="0556330979"
+            />
           <ContactLink 
             label="GitHub" 
             href={profile.github} 
@@ -45,10 +44,6 @@ export default function Contact() {
             value="Lujain Anwar Alghamdi"
             external
           />
-          <ContactLink 
-            label="Location" 
-            value={profile.location} 
-            />
           
         </div>
       </motion.div>
