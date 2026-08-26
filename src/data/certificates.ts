@@ -1,0 +1,147 @@
+export type Certificate = {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  category: "course" | "workshop" | "program";
+  file: string;
+};
+
+export const certificates: Certificate[] = [
+  {
+    id: "full-stack",
+    title: "Full Stack Robotics Engineer Certification",
+    issuer: "Smart Methods",
+    date: "Jun–Aug 2026",
+    category: "program",
+    file: "/certificates/Full-Stack-certificate_page-0001.pdf",
+  },
+  {
+    id: "robotics-ai",
+    title: "Robotics and Artificial Intelligence",
+    issuer: "Smart Methods",
+    date: "Jun–Aug 2026",
+    category: "program",
+    file: "/certificates/Robotics-AI-certificate_page-0001.pdf",
+  },
+  {
+    id: "electronics-iot",
+    title: "Electronics, Power & IoT",
+    issuer: "Smart Methods",
+    date: "Jun–Aug 2026",
+    category: "program",
+    file: "/certificates/Electronics-IOT-certifcate_page-0001.pdf",
+  },
+  {
+    id: "web-nlp",
+    title: "Web Development & Natural Language Processing",
+    issuer: "Smart Methods",
+    date: "Jun–Aug 2026",
+    category: "program",
+    file: "/certificates/Web-NLP-certificate_page-0001.pdf",
+  },
+  {
+    id: "mechanical-design",
+    title: "Mechanical Design",
+    issuer: "Smart Methods",
+    date: "Jun–Aug 2026",
+    category: "program",
+    file: "/certificates/Mechanical-Design-certificate_page-0001.pdf",
+  },
+  {
+    id: "artificial-intelligence-tech",
+    title: "Artificial Intelligence Technology and Applications",
+    issuer: "Huawei ICT Academy",
+    date: "Jul 2026",
+    category: "course",
+    file: "/certificates/Artificial%20Intelligence%20Technology%20and%20Applications.pdf",
+  },
+  {
+    id: "algorithm-program-design",
+    title: "Algorithm and Program Design",
+    issuer: "Huawei ICT Academy",
+    date: "Jul 2026",
+    category: "course",
+    file: "/certificates/Algorithm%20and%20Program%20Design.pdf",
+  },
+  {
+    id: "hcia-iot",
+    title: "HCIA-IoT V3.0 Course",
+    issuer: "Huawei ICT Academy",
+    date: "Nov 2025",
+    category: "course",
+    file: "/certificates/HCIA-IoT%20V3.0%20Course.pdf",
+  },
+  {
+    id: "hcia-datacom",
+    title: "HCIA-Datacom V1.0 Course",
+    issuer: "Huawei ICT Academy",
+    date: "Jul 2026",
+    category: "course",
+    file: "/certificates/_HCIA-Datacom%20V1.0%20Course.pdf",
+  },
+  {
+    id: "hcia-openeuler",
+    title: "HCIA-openEuler V1.0 Course",
+    issuer: "Huawei ICT Academy",
+    date: "Jul 2026",
+    category: "course",
+    file: "/certificates/HCIA-openEuler%20V1.0%20Course.pdf",
+  },
+  {
+    id: "rh124",
+    title: "Red Hat System Administration I (RH124)",
+    issuer: "Red Hat Training and Certification",
+    date: "Nov 2024",
+    category: "course",
+    file: "/certificates/Certificate%20of%20Attendance%20%28RH124-9.0%29.pdf",
+  },
+  {
+    id: "linux-fundamentals",
+    title: "Linux Fundamentals",
+    issuer: "Smart Methods",
+    date: "Jul 2026",
+    category: "course",
+    file: "/certificates/Linux-Fundamentals-certificate_page-0001.pdf",
+  },
+  {
+    id: "3d-printing",
+    title: "3D Printing",
+    issuer: "Smart Methods",
+    date: "Aug 2026",
+    category: "course",
+    file: "/certificates/3D-Printing-certificate_page-0001.pdf",
+  },
+  {
+    id: "engineering-skills",
+    title: "Engineering Skills",
+    issuer: "Smart Methods",
+    date: "Jul 2026",
+    category: "course",
+    file: "/certificates/Engineering-Skills-certificate_page-0001.pdf",
+  },
+  {
+    id: "electric-circuits",
+    title: "Fundamentals of Electric Circuits",
+    issuer: "Smart Methods",
+    date: "Jul 2026",
+    category: "course",
+    file: "/certificates/Electric-Circuits-certificate_page-0001.pdf",
+  },
+  {
+    id: "mechanical-fundamentals",
+    title: "Mechanical Fundamentals",
+    issuer: "Smart Methods",
+    date: "Jul 2026",
+    category: "course",
+    file: "/certificates/Mechanical-Fundamentals-certificate_page-0001.pdf",
+  },
+  {
+    id: "devops-git",
+    title: "DevOps Fundamentals — Git & GitHub Workshop",
+    issuer: "Smart Methods",
+    date: "Jun 2026",
+    category: "workshop",
+    file: "/certificates/DevOps-Fundamentals-certificate_page-0001.pdf",
+  },
+];

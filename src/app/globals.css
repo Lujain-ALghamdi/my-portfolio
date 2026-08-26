@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #050810;
+  --cyan: #00f0ff;
+  --magenta: #ff006e;
+  --glass: rgba(8, 16, 28, 0.72);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: #e2e8f0;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.section-panel {
+  @apply relative max-w-6xl mx-auto px-6 py-24 sm:py-32;
+}
+
+.glass-card {
+  @apply rounded-xl border border-cyan-900/35 bg-[rgba(8,16,28,0.72)] backdrop-blur-sm;
+  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.04), 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold;
+  @apply bg-cyan-400 text-[#050810] hover:bg-cyan-300 transition-colors;
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.25);
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold;
+  @apply border border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 transition-colors;
+}
+
+.tag {
+  @apply text-[11px] font-mono px-2 py-0.5 rounded border border-slate-700/80 text-slate-400 bg-slate-900/40;
+}
+
+/* Floating skill icons */
+.skill-orb {
+  @apply relative flex flex-col items-center justify-center w-[4.25rem] h-[4.25rem] rounded-2xl;
+  @apply border border-cyan-900/40 bg-[rgba(8,16,28,0.85)] backdrop-blur-sm;
+  @apply transition-all duration-300 cursor-default outline-none;
+  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.03), 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.skill-orb:hover,
+.skill-orb:focus-visible,
+.skill-orb-active {
+  @apply border-cyan-400/50;
+  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.15), 0 0 28px rgba(0, 240, 255, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.skill-orb-glow {
+  @apply absolute inset-2 rounded-xl opacity-0 transition-opacity duration-300 pointer-events-none;
+  background: radial-gradient(circle at 50% 40%, rgba(0, 240, 255, 0.14), transparent 70%);
+}
+
+.skill-orb:hover .skill-orb-glow,
+.skill-orb-active .skill-orb-glow {
+  @apply opacity-100;
+}
+
+.skill-orb-label {
+  @apply absolute -bottom-5 left-1/2 -translate-x-1/2 text-[9px] font-mono text-slate-500 whitespace-nowrap;
+  @apply opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none;
+}
+
+.skill-orb:hover .skill-orb-label,
+.skill-orb-active .skill-orb-label {
+  @apply opacity-100 text-cyan-400/80;
+}
+
+.skill-tooltip {
+  @apply absolute z-50 bottom-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-56;
+  @apply rounded-xl border border-cyan-500/30 bg-[rgba(6,12,22,0.96)] backdrop-blur-md p-3;
+  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.08), 0 12px 40px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+.skill-tooltip::after {
+  content: "";
+  @apply absolute left-1/2 -translate-x-1/2 -bottom-1.5 w-3 h-3 rotate-45;
+  @apply border-r border-b border-cyan-500/30 bg-[rgba(6,12,22,0.96)];
+}
+
+.cv-heading {
+  @apply text-xs font-bold uppercase tracking-wider border-b border-slate-300 pb-0.5 mb-1.5;
+}
+
+.cv-text {
+  @apply text-[11px] leading-snug text-slate-800;
+}
+
+/* ATS CV — single A4 page when printing */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0.35in 0.4in;
+  }
+
+  html,
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .cv-page {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    font-size: 10pt;
+  }
+
+  .cv-heading {
+    font-size: 9pt;
+    margin-bottom: 2pt;
+  }
+
+  .cv-text {
+    font-size: 9pt;
+    line-height: 1.25;
+  }
+}
