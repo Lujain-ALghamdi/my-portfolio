@@ -10,8 +10,8 @@ export type Certificate = {
 export const certificates: Certificate[] = [
   {
     id: "full-stack",
-    title: "Full Stack Robotics Engineer Certification",
-    issuer: "Smart Methods",
+    title: "Full-Stack Robotics Engineer",
+    issuer: "Smart Methods · IEEE",
     date: "Jun–Aug 2026",
     category: "program",
     file: "/certificates/Full-Stack-certificate_page-0001.pdf",
