@@ -39,6 +39,7 @@ export default function About() {
           <InfoRow label="Degree" value={profile.education.degree} />
           <InfoRow label="Status" value={profile.education.status} />
           <InfoRow label="Location" value={profile.location} />
+          <InfoRow label="Languages" value="Arabic — Native | English — Professional Proficiency" />
         </motion.div>
       </div>
     </section>
