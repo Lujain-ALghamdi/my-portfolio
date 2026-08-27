@@ -3,7 +3,7 @@
 Interactive 3D portfolio + ATS-friendly CV for **Lujain Anwar Alghamdi**, a Computer Science
 graduate from the University of Jeddah.
 
-**Live:** https://lujain-alghamdi.github.io/my-portfolio1/ · **CV:** https://lujain-alghamdi.github.io/my-portfolio1/cv/
+**Live:** https://lujain-alghamdi.github.io/my-portfolio/ · **CV:** https://lujain-alghamdi.github.io/my-portfolio/cv/
 
 ## Live Sections
 
@@ -37,8 +37,8 @@ Open [http://localhost:3000](http://localhost:3000)
 ## Deploy (GitHub Pages)
 
 This project is configured for static export and deploys to GitHub Pages under
-`/my-portfolio1/`. Pushing to `main` runs `.github/workflows/deploy.yml`, which builds with
-`GITHUB_PAGES=true` (enabling the `/my-portfolio1` base path) and publishes the `out/` folder.
+`/my-portfolio/`. Pushing to `main` runs `.github/workflows/deploy.yml`, which builds with
+`GITHUB_PAGES=true` (enabling the `/my-portfolio` base path) and publishes the `out/` folder.
 
 ```bash
 GITHUB_PAGES=true npm run build
