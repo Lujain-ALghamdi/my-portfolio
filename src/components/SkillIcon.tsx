@@ -7,10 +7,10 @@ import {
   skillIconUrl,
   type SkillMeta,
 } from "@/data/skills";
+import SkillGlyph, { isSkillIconName } from "./skillIcons";
 
 export default function SkillIcon({ meta }: { meta: SkillMeta }) {
   const [hover, setHover] = useState(false);
-  const [iconFailed, setIconFailed] = useState(false);
   const projects = getProjectsForSkill(meta.name);
   const iconUrl = skillIconUrl(meta);
 
@@ -30,7 +30,7 @@ export default function SkillIcon({ meta }: { meta: SkillMeta }) {
         className={`skill-orb group ${hover ? "skill-orb-active" : ""}`}
       >
         <span className="skill-orb-glow" aria-hidden />
-        {iconUrl && !iconFailed ? (
+        {iconUrl ? (
           <span
             role="img"
             aria-label={meta.name}
@@ -47,6 +47,15 @@ export default function SkillIcon({ meta }: { meta: SkillMeta }) {
               maskSize: "contain",
             }}
           />
+        ) : isSkillIconName(meta.icon) ? (
+          <span
+            role="img"
+            aria-label={meta.name}
+            className="relative z-10 drop-shadow-sm"
+            style={{ color: `#${meta.color ?? "8B5CF6"}` }}
+          >
+            <SkillGlyph name={meta.icon} className="w-7 h-7" />
+          </span>
         ) : (
           <span
             className="relative z-10 text-[10px] font-bold font-mono tracking-tight"

@@ -4,7 +4,9 @@ export type SkillMeta = {
   name: string;
   slug?: string;
   color?: string;
-  /** Fallback label when no Simple Icons slug */
+  /** Name of an inline line-icon from `skillIcons` (for skills with no brand logo) */
+  icon?: string;
+  /** Fallback label when there is neither a Simple Icons slug nor an inline icon */
   monogram?: string;
 };
 
@@ -15,6 +17,7 @@ export const skillGroups: { category: string; skills: SkillMeta[] }[] = [
       { name: "Python", slug: "python", color: "3776AB" },
       { name: "JavaScript", slug: "javascript", color: "F7DF1E" },
       { name: "PHP", slug: "php", color: "777BB4" },
+      { name: "C", slug: "c", color: "A8B9CC" },
       { name: "C++", slug: "cplusplus", color: "00599C" },
       { name: "C#", slug: "csharp", color: "68217A" },
     ],
@@ -38,10 +41,10 @@ export const skillGroups: { category: string; skills: SkillMeta[] }[] = [
   {
     category: "AI & Computer Vision",
     skills: [
-      { name: "Artificial Intelligence", monogram: "AI", color: "8B5CF6" },
+      { name: "Artificial Intelligence", icon: "network", color: "8B5CF6" },
       { name: "Python", slug: "python", color: "3776AB" },
       { name: "OpenCV", slug: "opencv", color: "5C3EE8" },
-      { name: "Computer Vision", monogram: "CV", color: "FF006E" },
+      { name: "Computer Vision", icon: "scanEye", color: "8B5CF6" },
     ],
   },
   {
@@ -49,8 +52,15 @@ export const skillGroups: { category: string; skills: SkillMeta[] }[] = [
     skills: [
       { name: "Arduino", slug: "arduino", color: "00979D" },
       { name: "C++", slug: "cplusplus", color: "00599C" },
-      { name: "Sensors", monogram: "SN", color: "94A3B8" },
-      { name: "Servo Control", monogram: "SV", color: "FF006E" },
+      { name: "ESP32", slug: "espressif", color: "E7352C" },
+      { name: "Servo Motors", icon: "cog", color: "8B5CF6" },
+      { name: "Embedded Systems", icon: "chip", color: "8B5CF6" },
+      { name: "Microcontrollers", icon: "cpu", color: "8B5CF6" },
+      { name: "PWM", icon: "wave", color: "8B5CF6" },
+      { name: "Sensors", icon: "broadcast", color: "8B5CF6" },
+      { name: "Robotics", icon: "robot", color: "8B5CF6" },
+      { name: "Quadruped Robotics", icon: "robotDog", color: "8B5CF6" },
+      { name: "Robot Motion Control", icon: "gauge", color: "8B5CF6" },
     ],
   },
   {
@@ -67,8 +77,9 @@ export const skillGroups: { category: string; skills: SkillMeta[] }[] = [
     skills: [
       { name: "Figma", slug: "figma", color: "F24E1E" },
       { name: "WordPress", slug: "wordpress", color: "21759B" },
-      { name: "Onshape", slug: "onshape", color: "00B4D8" },
-      { name: "3D Design", monogram: "3D", color: "8B5CF6" },
+      { name: "Onshape", icon: "cube", color: "1B9FD8" },
+      { name: "3D Design", icon: "rotate3d", color: "8B5CF6" },
+      { name: "3D Printing", icon: "printer3d", color: "8B5CF6" },
     ],
   },
 ];
@@ -77,11 +88,27 @@ export const skillGroups: { category: string; skills: SkillMeta[] }[] = [
 const MANUAL_PROJECTS: Record<string, string[]> = {
   Onshape: ["Flower-Shaped L Keychain"],
   "3D Design": ["Flower-Shaped L Keychain"],
+  "3D Printing": ["Rex Robot Dog", "Flower-Shaped L Keychain"],
   "Computer Vision": ["Real-Time Color Recognition"],
   OpenCV: ["Real-Time Color Recognition"],
   "Artificial Intelligence": ["Luna AI Assistant"],
-  "Servo Control": ["Arduino Ultrasonic Servo Control"],
-  Sensors: ["Arduino Ultrasonic Servo Control"],
+  "Servo Motors": ["Rex Robot Dog", "Arduino Ultrasonic Servo Control"],
+  Sensors: ["Arduino Ultrasonic Servo Control", "Smart Vehicle Anti-Theft System"],
+  "Embedded Systems": [
+    "Rex Robot Dog",
+    "Smart Vehicle Anti-Theft System",
+    "Arduino Ultrasonic Servo Control",
+  ],
+  Microcontrollers: [
+    "Rex Robot Dog",
+    "Smart Vehicle Anti-Theft System",
+    "Arduino Ultrasonic Servo Control",
+  ],
+  PWM: ["Rex Robot Dog", "Arduino Ultrasonic Servo Control"],
+  Robotics: ["Rex Robot Dog"],
+  "Quadruped Robotics": ["Rex Robot Dog"],
+  "Robot Motion Control": ["Rex Robot Dog"],
+  C: ["Parallel Galactic Simulations"],
   MySQL: ["TrainLink", "User Management System"],
   Bootstrap: ["TrainLink"],
 };
