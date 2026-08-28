@@ -14,7 +14,7 @@ export default function Projects() {
     <section id="projects" className="section-panel">
       <SectionLabel n="02" title="Projects" />
 
-      <div className="grid md:grid-cols-2 md:items-start gap-6 mb-12">
+      <div className="grid md:grid-cols-2 md:auto-rows-fr gap-6 mb-12">
         {featured.map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} large />
         ))}
