@@ -37,7 +37,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "rex-robot-dog",
-    title: "Rex-Robot-Dog",
+    title: "Rex Robot Dog",
     subtitle: "Arduino Quadruped Robot",
     description:
       "A DIY quadruped robot dog built with Arduino, servo motors, and 3D-printed parts. Rex demonstrates embedded programming and robotic motion through multiple programmed behaviors and interactive movement sequences.",
