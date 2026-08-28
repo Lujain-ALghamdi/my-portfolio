@@ -25,11 +25,43 @@ export type Project = {
   github?: string;
   live?: string;
   featured: boolean;
-  category: "fullstack" | "mobile" | "iot" | "ai" | "web" | "design";
+  category: "fullstack" | "mobile" | "iot" | "ai" | "web" | "design" | "robotics";
   media?: ProjectMedia;
+  /** Optional featured image rendered inside the project card (root-relative path). */
+  image?: string;
+  imageAlt?: string;
+  /** Optional short demo clips rendered as an in-card gallery (root-relative paths). */
+  videos?: string[];
 };
 
 export const projects: Project[] = [
+  {
+    id: "rex-robot-dog",
+    title: "Rex Robot Dog",
+    subtitle: "Arduino Quadruped Robot",
+    description:
+      "A DIY quadruped robot dog built with Arduino, servo motors, and 3D-printed parts. Rex demonstrates embedded programming and robotic motion through multiple programmed behaviors and interactive movement sequences.",
+    highlights: [
+      "Four-legged robotic movement controlled with servo motors",
+      "Programmed forward and backward leg movement",
+      "Sitting behavior",
+      "Handshake interaction",
+      "Fist-bump gesture",
+      "Custom 3D-printed mechanical body and legs",
+      "Arduino-based embedded control",
+    ],
+    tech: ["Arduino", "C++", "Servo Motors", "3D Printing", "Robotics"],
+    github: "https://github.com/Lujain-ALghamdi/Rex-Robot-Dog",
+    featured: true,
+    category: "robotics",
+    image: "/projects/rex/rex.jpg",
+    imageAlt: "Rex Arduino quadruped robot dog",
+    videos: [
+      "/projects/rex/IMG_0972.mp4",
+      "/projects/rex/IMG_0973.mp4",
+      "/projects/rex/IMG_0974.mp4",
+    ],
+  },
   {
     id: "trainlink",
     title: "TrainLink",

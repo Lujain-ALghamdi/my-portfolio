@@ -3,6 +3,7 @@
 import { projects } from "@/data/projects";
 import { SectionLabel } from "./About";
 import ProjectMediaBlock from "./ProjectMedia";
+import ProjectShowcase from "./ProjectShowcase";
 import { motion } from "framer-motion";
 
 export default function Projects() {
@@ -13,7 +14,7 @@ export default function Projects() {
     <section id="projects" className="section-panel">
       <SectionLabel n="02" title="Projects" />
 
-      <div className="grid md:grid-cols-2 gap-6 mb-12">
+      <div className="grid md:grid-cols-2 md:items-start gap-6 mb-12">
         {featured.map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} large />
         ))}
@@ -72,6 +73,14 @@ function ProjectCard({
           </li>
         ))}
       </ul>
+
+      {(project.image || (project.videos && project.videos.length > 0)) && (
+        <ProjectShowcase
+          image={project.image}
+          imageAlt={project.imageAlt}
+          videos={project.videos}
+        />
+      )}
 
       <div className="flex flex-wrap gap-1.5 mb-4">
         {project.tech.map((t) => (
