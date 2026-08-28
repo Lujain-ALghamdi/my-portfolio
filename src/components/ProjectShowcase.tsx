@@ -28,7 +28,7 @@ export default function ProjectShowcase({
   if (!image && !hasVideos) return null;
 
   const cell =
-    "relative aspect-[4/3] overflow-hidden rounded-lg border border-cyan-900/35 bg-black/40 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-[0_0_0_1px_rgba(0,240,255,0.15),0_0_20px_rgba(0,240,255,0.13)]";
+    "relative aspect-[4/3] overflow-hidden rounded-lg border border-cyan-900/35 bg-black/40 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-[0_0_0_1px_rgba(124,58,237,0.15),0_0_20px_rgba(124,58,237,0.13)]";
 
   return (
     <div className="mt-2 mb-5">

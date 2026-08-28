@@ -38,7 +38,7 @@ export const skillGroups: { category: string; skills: SkillMeta[] }[] = [
   {
     category: "AI & Computer Vision",
     skills: [
-      { name: "Artificial Intelligence", monogram: "AI", color: "00F0FF" },
+      { name: "Artificial Intelligence", monogram: "AI", color: "8B5CF6" },
       { name: "Python", slug: "python", color: "3776AB" },
       { name: "OpenCV", slug: "opencv", color: "5C3EE8" },
       { name: "Computer Vision", monogram: "CV", color: "FF006E" },
@@ -68,7 +68,7 @@ export const skillGroups: { category: string; skills: SkillMeta[] }[] = [
       { name: "Figma", slug: "figma", color: "F24E1E" },
       { name: "WordPress", slug: "wordpress", color: "21759B" },
       { name: "Onshape", slug: "onshape", color: "00B4D8" },
-      { name: "3D Design", monogram: "3D", color: "00F0FF" },
+      { name: "3D Design", monogram: "3D", color: "8B5CF6" },
     ],
   },
 ];

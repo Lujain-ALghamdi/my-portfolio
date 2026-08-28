@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import Nav from "@/components/Nav";
+import CursorGlow from "@/components/CursorGlow";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
@@ -25,6 +26,7 @@ export default function Home() {
   return (
     <>
       <Scene3D scroll={scroll} />
+      <CursorGlow />
       <Nav scroll={scroll} />
       <main className="relative z-10">
         <Hero />

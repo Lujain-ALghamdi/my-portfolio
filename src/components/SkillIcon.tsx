@@ -36,7 +36,7 @@ export default function SkillIcon({ meta }: { meta: SkillMeta }) {
             aria-label={meta.name}
             className="w-7 h-7 relative z-10 drop-shadow-sm bg-current"
             style={{
-              color: `#${meta.color ?? "00F0FF"}`,
+              color: `#${meta.color ?? "8B5CF6"}`,
               WebkitMaskImage: `url("${iconUrl}")`,
               maskImage: `url("${iconUrl}")`,
               WebkitMaskPosition: "center",
@@ -50,7 +50,7 @@ export default function SkillIcon({ meta }: { meta: SkillMeta }) {
         ) : (
           <span
             className="relative z-10 text-[10px] font-bold font-mono tracking-tight"
-            style={{ color: meta.color ? `#${meta.color}` : "#00f0ff" }}
+            style={{ color: meta.color ? `#${meta.color}` : "#8b5cf6" }}
           >
             {meta.monogram ?? (meta.name === "Onshape" ? meta.name : meta.name.slice(0, 2).toUpperCase())}
           </span>

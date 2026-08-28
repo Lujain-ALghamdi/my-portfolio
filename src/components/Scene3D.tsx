@@ -20,8 +20,8 @@ function CyberCore({ scroll }: { scroll: number }) {
       <mesh ref={ref}>
         <icosahedronGeometry args={[1.2, 1]} />
         <meshStandardMaterial
-          color="#00f0ff"
-          emissive="#003344"
+          color="#8b5cf6"
+          emissive="#2a1245"
           emissiveIntensity={0.8}
           wireframe
           transparent
@@ -49,7 +49,7 @@ function ParticleField() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial size={0.04} color="#00f0ff" transparent opacity={0.6} sizeAttenuation />
+      <pointsMaterial size={0.045} color="#c4b5fd" transparent opacity={0.5} sizeAttenuation />
     </points>
   );
 }
@@ -78,8 +78,8 @@ function ScrollScene({ scroll }: { scroll: number }) {
         fadeStrength={1.2}
         position={[0, -2.2, 0]}
         rotation={[0, 0, 0]}
-        cellColor="#0d3340"
-        sectionColor="#00f0ff"
+        cellColor="#241436"
+        sectionColor="#7c3aed"
       />
     </group>
   );
@@ -95,8 +95,8 @@ export default function Scene3D({ scroll }: { scroll: number }) {
       <color attach="background" args={["#050810"]} />
       <fog attach="fog" args={["#050810", 8, 22]} />
       <ambientLight intensity={0.25} />
-      <pointLight position={[4, 6, 4]} intensity={1.2} color="#00f0ff" />
-      <pointLight position={[-4, 2, -2]} intensity={0.6} color="#ff006e" />
+      <pointLight position={[4, 6, 4]} intensity={1.2} color="#8b5cf6" />
+      <pointLight position={[-4, 2, -2]} intensity={0.6} color="#4c1d95" />
 
       <ScrollScene scroll={scroll} />
 

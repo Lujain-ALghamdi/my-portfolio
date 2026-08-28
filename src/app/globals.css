@@ -2,14 +2,32 @@
 
 :root {
   --bg: #050810;
-  --cyan: #00f0ff;
-  --magenta: #ff006e;
+  /* Dark futuristic purple accent palette (replaces the former cyan accent). */
+  --accent: #7c3aed;
+  --accent-light: #8b5cf6;
+  --accent-glow: #a855f7;
+  --accent-dark: #4c1d95;
+  --accent-rgb: 124, 58, 237;
+  --accent-light-rgb: 139, 92, 246;
   --glass: rgba(8, 16, 28, 0.72);
 }
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+/* Re-map Tailwind's `cyan` scale to the purple accent palette so every
+   existing `*-cyan-*` utility across the site renders purple with no markup
+   changes. Kept in one place per the theme's CSS-variable convention. */
+@theme {
+  --color-cyan-200: #ddd6fe;
+  --color-cyan-300: #c4b5fd;
+  --color-cyan-400: #8b5cf6;
+  --color-cyan-500: #7c3aed;
+  --color-cyan-600: #6d28d9;
+  --color-cyan-700: #5b21b6;
+  --color-cyan-900: #4c1d95;
 }
 
 html {
@@ -28,18 +46,18 @@ body {
 
 .glass-card {
   @apply rounded-xl border border-cyan-900/35 bg-[rgba(8,16,28,0.72)] backdrop-blur-sm;
-  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.04), 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb),0.04), 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .btn-primary {
   @apply inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold;
-  @apply bg-cyan-400 text-[#050810] hover:bg-cyan-300 transition-colors;
-  box-shadow: 0 0 24px rgba(0, 240, 255, 0.25);
+  @apply bg-cyan-500 text-[#050810] hover:bg-cyan-400 transition-colors;
+  box-shadow: 0 0 18px rgba(var(--accent-light-rgb), 0.25);
 }
 
 .btn-ghost {
   @apply inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-semibold;
-  @apply border border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 transition-colors;
+  @apply border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 transition-colors;
 }
 
 .tag {
@@ -51,20 +69,20 @@ body {
   @apply relative flex flex-col items-center justify-center w-[4.25rem] h-[4.25rem] rounded-2xl;
   @apply border border-cyan-900/40 bg-[rgba(8,16,28,0.85)] backdrop-blur-sm;
   @apply transition-all duration-300 cursor-default outline-none;
-  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.03), 0 4px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb),0.03), 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .skill-orb:hover,
 .skill-orb:focus-visible,
 .skill-orb-active {
   @apply border-cyan-400/50;
-  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.15), 0 0 28px rgba(0, 240, 255, 0.18),
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb),0.15), 0 0 28px rgba(var(--accent-rgb),0.18),
     0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
 .skill-orb-glow {
   @apply absolute inset-2 rounded-xl opacity-0 transition-opacity duration-300 pointer-events-none;
-  background: radial-gradient(circle at 50% 40%, rgba(0, 240, 255, 0.14), transparent 70%);
+  background: radial-gradient(circle at 50% 40%, rgba(var(--accent-rgb),0.14), transparent 70%);
 }
 
 .skill-orb:hover .skill-orb-glow,
@@ -85,7 +103,7 @@ body {
 .skill-tooltip {
   @apply absolute z-50 bottom-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-56;
   @apply rounded-xl border border-cyan-500/30 bg-[rgba(6,12,22,0.96)] backdrop-blur-md p-3;
-  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.08), 0 12px 40px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb),0.08), 0 12px 40px rgba(0, 0, 0, 0.55);
   pointer-events: none;
 }
 
@@ -101,6 +119,52 @@ body {
 
 .cv-text {
   @apply text-[11px] leading-snug text-slate-800;
+}
+
+/* Cursor-follow purple glow — a soft decorative spotlight behind the content.
+   The native cursor is untouched; this layer never intercepts pointer events. */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transform: translate3d(-50%, -50%, 0);
+  transition: opacity 300ms ease;
+  will-change: transform, opacity;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.2) 0%,
+    rgba(124, 58, 237, 0.1) 30%,
+    rgba(76, 29, 149, 0.04) 55%,
+    transparent 75%
+  );
+  filter: blur(24px);
+}
+
+.cursor-glow.is-active {
+  opacity: 0.35;
+}
+
+.cursor-glow.is-active.is-hot {
+  opacity: 0.5;
+}
+
+/* Only meaningful with a real pointer; hidden on touch / coarse-pointer devices. */
+@media (hover: none), (pointer: coarse) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-glow {
+    transition: none;
+  }
 }
 
 /* ATS CV — single A4 page when printing */
