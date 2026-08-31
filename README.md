@@ -8,7 +8,7 @@ graduate from the University of Jeddah.
 ## Live Sections
 
 | Route | Description |
-|-------|-------------|
+|-------|-------------| 
 | `/` | 3D scroll portfolio (Three.js + Framer Motion) |
 | `/cv` | ATS-friendly CV — print to PDF (Ctrl+P) |
 
