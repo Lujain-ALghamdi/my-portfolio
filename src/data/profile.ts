@@ -4,7 +4,7 @@ export const profile = {
   tagline: "Building meaningful digital experiences — from full-stack platforms to intelligent systems.",
   location: "Jeddah, Saudi Arabia",
   github: "https://github.com/Lujain-ALghamdi",
-  linkedin: "https://www.linkedin.com/in/lujain-alghamdi-0b26ba367/",
+  linkedin: "www.linkedin.com/in/lujain-a-alghamdi-0b26ba367",
   education: {
     university: "University of Jeddah",
     degree: "Bachelor's Degree in Computer Science",
