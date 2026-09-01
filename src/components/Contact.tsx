@@ -41,7 +41,7 @@ export default function Contact() {
           <ContactLink
             label="LinkedIn"
             href={profile.linkedin}
-            value="Lujain Anwar Alghamdi"
+            value="Lujain A. Alghamdi"
             external
           />
           
